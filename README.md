@@ -14,7 +14,7 @@ You also need to make sure your python >= 3.6 and install py repositories in req
 pip install -r requirements.txt
 ```
 
-After installation, make sure you download models' [checkpoint](https://drive.google.com/file/d/1JZNP2i8NfLmg-w-6H4zY3cToBWAKqW48/view?usp=sharing) Google Drive and copy all the folders into the directory where the project resides.
+After installation, make sure you download models' [checkpoint](https://drive.google.com/file/d/1LdxXpQsqumVmakqiC4p7v5XPcstGO6TJ/view?usp=drive_link) Google Drive and copy all the folders into the directory where the project resides.
 
 **Our code is based on [SimCSE-main](https://github.com/princeton-nlp/SimCSE) and [SimCSE-master](https://github.com/yangjianxin1/SimCSE) replication, which is gratefully acknowledged.**
 
