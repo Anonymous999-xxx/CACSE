@@ -85,32 +85,3 @@ python eval_CACSE_RoBERTa.py
 | CACSE D | 74.75 | 83.74 | 76.23 | 83.87 | 79.58 | 81.18 | 73.58 | 78.99 |
 | CACSE+UC♠  | 75.57 | 85.15 | 78.27 | 86.01 | 81.85 | 83.13 | 73.32 | 80.47 |
 | CACSE+UC D♠ | 74.88 | 85.18 | 78.06 | 85.59 | 81.40 | 82.57 | 73.41 | 80.16 |
-
-# Generalization of BERT-like model to [LLaMA2](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)
-
-This section uses CACSE-BERT's knowledge of the STS-B and SICKR datasets to generalize to LLaMA2-7B through instruction fine-tuning.
-See the paper for more details, and this section gives an implementation description.
-
-## Finetune 
-
-We use [alpaca-lora](https://github.com/tloen/alpaca-lora) to 
-fine-tune llama, first we make the corresponding dataset and then follow the fine-tuning commands of 
-alpaca(python finetune.py \...) to get the LoRA weights file.
-
-We put the weights file in **LoRA_weight**.
-
-## Export Huggingface checkpoint
-
-Next, we use [alpaca-lora](https://github.com/tloen/alpaca-lora)'s **export_hf_checkpoint.py** to fuse the lora weights with 
-LLaMA2-7B to get the fine tuned model.
-
-## Evaluation of LLM
-
-We used [Language Model Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness) to evaluate both the original and the LLaMA2 that we fine-tuned.
-
-# Citing
-MTEB was introduced in "[CACSE: Cross-Attention based Unsupervised Contrastive Learning for Sentence Embedding](https://arxiv.org/abs/xxx)", feel free to cite:
-
-```bibtex
-@article{xxx}
-```
