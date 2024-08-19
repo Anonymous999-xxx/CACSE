@@ -40,7 +40,10 @@ def seed_everything(seed=42):
     # unless you tell it to be deterministic
     torch.backends.cudnn.deterministic = True
 
+
 L1_loss = torch.nn.L1Loss()
+
+
 def distill_loss(y_pred, out0, out_t1, device, temp=0.05, k1=0.1):
     y_true = torch.arange(y_pred.shape[0], device=device)
     y_true = (y_true - y_true % 2 * 2) + 1
@@ -214,7 +217,7 @@ def load_eval_data(tokenizer, args, mode):
 
 def main(args):
     tokenizer = AutoTokenizer.from_pretrained(args.pretrain_model_path)
-    model = CACSE_distilled(args.pretrain_model_path,pooling='cls').to(args.device)
+    model = CACSE_distilled(args.pretrain_model_path, pooling='cls').to(args.device)
 
     teacher_CACSE = CACSEModel(Submodel_1_path="CACSE_BERT_submodel1",
                                Submodel_2_path='CACSE_BERT_submodel2',
@@ -262,14 +265,15 @@ def main(args):
         # | 74.88 | 85.18 | 78.06 | 85.59 | 81.40 |    82.57     |      73.41      | 80.16 |
         # +-------+-------+-------+-------+-------+--------------+-----------------+-------+
 
-        model_distilled_saved=model.CACSE_distilled_model
-        config_saved=model.config
-        tokenizer_save=tokenizer
+        model_distilled_saved = model.CACSE_distilled_model
+        config_saved = model.config
+        tokenizer_save = tokenizer
 
-        model_distilled_saved.save_pretrained(join(args.output_path,'cacse_distilled'))
-        config_saved.save_pretrained(join(args.output_path,'cacse_distilled'))
-        tokenizer_save.save_pretrained(join(args.output_path,'cacse_distilled'))
-        logger.info("model saved down!")
+        model_distilled_saved.save_pretrained(join(args.output_path, 'cacse_distilled'))
+        config_saved.save_pretrained(join(args.output_path, 'cacse_distilled'))
+        tokenizer_save.save_pretrained(join(args.output_path, 'cacse_distilled'))
+        logger.info("model saved done!")
+
 
 if __name__ == '__main__':
 
@@ -290,7 +294,8 @@ if __name__ == '__main__':
     parser.add_argument("--test_file", type=str, default="data/stsbenchmark/sts-test.csv")
     parser.add_argument("--pretrain_model_path", type=str, default="bert-base")
     parser.add_argument("--overwrite_cache", action='store_true', default=False, help="overwrite cache")
-    parser.add_argument("--do_train", action='store_true', default=0)# if your want to train CACSE-BERT-UC-distilled, please change to 1 or True.
+    parser.add_argument("--do_train", action='store_true',
+                        default=0)  # if your want to train CACSE-BERT-UC-distilled, please change to 1 or True.
     parser.add_argument("--do_predict", action='store_true', default=1)
     parser.add_argument("--alpha", type=float, default=1 / 4,
                         help="alpha as a weighting factor to adjust the output of the two models")

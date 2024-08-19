@@ -264,7 +264,7 @@ def main(args):
         model_distilled_saved.save_pretrained(join(args.output_path,'cacse_distilled'))
         config_saved.save_pretrained(join(args.output_path,'cacse_distilled'))
         tokenizer_save.save_pretrained(join(args.output_path,'cacse_distilled'))
-        logger.info("model saved down!")
+        logger.info("model saved done!")
 
 if __name__ == '__main__':
 

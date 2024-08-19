@@ -203,7 +203,7 @@ def main(args):
 
         submodel2.save_pretrained(os.path.join(args.output_path, "submodel2"))
         config_submodel2.save_pretrained(os.path.join(args.output_path, "submodel2"))
-        logger.info("model saved down!")
+        logger.info("model saved done!")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

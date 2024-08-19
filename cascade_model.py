@@ -9,7 +9,7 @@ class constraint_layer_setting(nn.Module):
     def __init__(self, pretrained_model, constraint_trainstate_pos, dropout=0.1):
         super(constraint_layer_setting, self).__init__()
         config = AutoConfig.from_pretrained(pretrained_model)
-        config.attention_probs_dropout_prob = dropout  # 修改config的dropout系数
+        config.attention_probs_dropout_prob = dropout
         config.hidden_dropout_prob = dropout
 
         self.Encoderlayers_Model = AutoModel.from_pretrained(pretrained_model, config=config)
