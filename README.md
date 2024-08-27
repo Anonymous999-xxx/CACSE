@@ -113,7 +113,7 @@ python eval_CACSE_RoBERTa.py
 
 ### The performance of the CACSE and baseline models on 20 text classification tasks
 
-| **Tasks(Acc)**                                                | **Sim*** | **ESim*** | **Diff*** | **Info*** | **SN*** | **Whinened*** | **Rank*** | **CACSE** | **+UC D** |
+| **Tasks(Acc)**                                                | **SimCSE** | **ESimCSE** | **DiffCSE** | **InfoCSE** | **SNCSE** | **WhinenedCSE** | **RankCSE** | **CACSE** | **+UC D** |
 |:----------------------------------------------------------------------:|:-----------------:|:------------------:|:------------------:|:------------------:|:----------------:|:----------------------:|:------------------:|:------------------:|:------------------:|
 | **AngryTweetsClassification**                                 | 42.30             | 40.45              | 42.57              | 41.72              | **44.35**   | 41.33                  | 42.28              | 41.22              | 41.35              |
 | **Banking77Classification**                                   | 74.43             | 73.87              | 76.09              | **78.17**     | 65.88            | 75.59                  | 75.69              | 75.38              | 77.34              |
@@ -186,12 +186,12 @@ python eval_CACSE_RoBERTa.py
 |:--------------------------------:|:-----------------------------------:|:-----------------------------------:|
 | **Glove**               | 81.45                               | 55.83                               |
 | **Crawl**               | 82.75                               | 62.65                               |
-| **Skip-thought$\star$** | 83.50                               | -                                   |
-| **IS-BERT$\star$**      | 85.83                               | -                                   |
-| **SimCSE**              | 85.81                               | 68.10                               |
-| **CACSE**               | 85.66                               | **69.40**                      |
-| **CACSE-Distilled**     | **85.90**                      | 69.33                               |
-| **SimCSE**              | 84.84                               | 63.85                               |
-| **CACSE**               | 85.10                               | 65.64                               |
-| **CACSE-Distilled**     | **86.77**                      | **66.22**                      |
+| **Skip-thought** | 83.50                               | -                                   |
+| **IS-BERT**      | 85.83                               | -                                   |
+| **SimCSE-BERT**              | 85.81                               | 68.10                               |
+| **CACSE-BERT**               | 85.66                               | **69.40**                      |
+| **CACSE-BERT-Distilled**     | **85.90**                      | 69.33                               |
+| **SimCSE-RoBERTa**              | 84.84                               | 63.85                               |
+| **CACSE-RoBERTa**               | 85.10                               | 65.64                               |
+| **CACSE-RoBERTa-Distilled**     | **86.77**                      | **66.22**                      |
 
